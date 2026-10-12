@@ -2,7 +2,7 @@
   "lastChangelogVersion": "1.1.0",
   "theme": "dark",
   "defaultProvider": "opencode-go",
-  "defaultModel": "minimax-m3",
+  "defaultModel": "muse-spark-1.3-contributor",
   "defaultThinkingLevel": "medium",
   "packages": [
     "npm:@gotgenes/pi-permission-system",
