@@ -117,3 +117,7 @@ vim.keymap.set(
 vim.keymap.set('n', '<leader>y', '<cmd>%yank<cr>', { desc = 'Yank the entire buffer' })
 
 vim.keymap.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'show diagnostic' })
+vim.keymap.set('n', '<leader>pu', function()
+  vim.pack.update()
+  print('Updating all plugins...')
+end, { desc = 'Update all plugins' })

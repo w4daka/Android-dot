@@ -164,7 +164,7 @@ gitac () {
 }
 
 cheatsh() {
-    curl cheat.sh/"$1" | bat -plman
+    curl cheat.sh/"$1" --fail | bat -plman
 }
 
 export MANPAGER="bat -plman"
