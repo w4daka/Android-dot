@@ -96,6 +96,10 @@ require('lazy').setup({
   { import = 'ai' },
   { import = 'languages' },
 }, {
+  performance = {
+    reset_packpath = false,
+  },
+}, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
@@ -117,9 +121,7 @@ require('lazy').setup({
   },
 })
 
--- init.lua
-require('luasnip.loaders.from_lua').load({
-  paths = vim.fn.stdpath('config') .. '/lua/snippets',
-})
-
--- vim.opt.helplang = { "ja", "en" }
+-- -- init.lua
+-- require('luasnip.loaders.from_lua').load({
+--   paths = vim.fn.stdpath('config') .. '/lua/snippets',
+-- })
