@@ -16,8 +16,9 @@
       "git rm*": "deny",
       "dd *": "deny",
       "mkfs*": "deny",
-      "format*": "deny"
+      "format*": "deny",
+      "git clone*": "ask"
     },
-    "external_directory": "ask"
+    "external_directory": "allow"
   }
 }
