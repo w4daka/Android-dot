@@ -5,6 +5,20 @@ end, { desc = 'Open init.lua' })
 
 vim.api.nvim_create_user_command('SayHello', 'echo "Hello!"', { desc = 'say hello' })
 
+vim.api.nvim_create_user_command('HlPreview', function()
+  vim.cmd('vnew')
+  vim.bo.buftype = 'nofile'
+  vim.bo.bufhidden = 'hide'
+  vim.bo.swapfile = false
+  local groups = { 'Pmenu', 'PmenuSel', 'PmenuMatch', 'Special', 'Comment' }
+  local buf = vim.api.nvim_get_current_buf()
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, groups)
+  for i, g in ipairs(groups) do
+    vim.api.nvim_buf_add_highlight(buf, -1, g, i - 1, 0, -1)
+  end
+  vim.bo[buf].modifiable = false
+end, { desc = 'Preview highlight groups in scratch' })
+
 vim.api.nvim_create_user_command('Greet', function(args)
   print('Hello, ' .. args.args)
 end, { nargs = 1, desc = 'greet command' })
