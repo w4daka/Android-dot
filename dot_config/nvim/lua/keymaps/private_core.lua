@@ -81,15 +81,15 @@ vim.keymap.set('n', '<leader>tt', function()
   vim.cmd('startinsert')
 end, { desc = 'Vertical terminal' })
 
--- LuaSnipをTabで展開、ジャンプ
-vim.keymap.set({ 'i', 's' }, '<Tab>', function()
-  local ls = require('luasnip')
-  if ls.expand_or_jumpable() then
-    return '<Plug>luasnip-expand-or-jump'
-  else
-    return '<Tab>'
-  end
-end, { expr = true, silent = true })
+-- -- LuaSnipをTabで展開、ジャンプ
+-- vim.keymap.set({ 'i', 's' }, '<Tab>', function()
+--   local ls = require('luasnip')
+--   if ls.expand_or_jumpable() then
+--     return '<Plug>luasnip-expand-or-jump'
+--   else
+--     return '<Tab>'
+--   end
+-- end, { expr = true, silent = true })
 
 vim.keymap.set({ 'i', 's' }, '<S-Tab>', function()
   local ls = require('luasnip')

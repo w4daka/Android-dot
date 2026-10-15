@@ -3,3 +3,7 @@
 	email = 213398204+w4daka@users.noreply.github.com
 [core]
 	editor = nvim
+[color]
+	ui = true
+[ghq]
+	root = /home/w4daka/projects

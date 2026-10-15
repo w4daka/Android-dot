@@ -15,6 +15,7 @@ return {
       'rinx/cmp-skkeleton', -- または Xantibody/blink-cmp-skkeleton を使う場合は後述
       'uga-rosa/cmp-dictionary',
     },
+    enabled = false,
     config = function()
       local cmp = require('cmp')
       local luasnip = require('luasnip')
