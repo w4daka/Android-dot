@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.1.0",
+  "lastChangelogVersion": "1.2.0",
   "theme": "dark",
   "defaultProvider": "opencode-go",
   "defaultModel": "muse-spark-1.3-contributor",
@@ -8,13 +8,22 @@
     "npm:@gotgenes/pi-permission-system",
     {
       "source": "npm:@demigodmode/pi-web-agent",
-      "extensions": ["-dist/extension.js"]
+      "extensions": [
+        "-dist/extension.js"
+      ]
     },
     "npm:pi-lens",
     "npm:donsetch",
-    "git:github.com/HazAT/pi-interactive-subagents"
+    "git:github.com/HazAT/pi-interactive-subagents",
+    "npm:pi-ask-user",
+    "npm:@dietrichgebert/ponytail",
+    "npm:@ff-labs/pi-fff",
+    "npm:pi-context-view",
+    "npm:@narumitw/pi-btw"
   ],
   "tuiMode": "regular",
   "quietStartup": false,
-  "extensions": ["-extensions/gondolin/index.ts"]
+  "extensions": [
+    "-extensions/gondolin/index.ts"
+  ]
 }
