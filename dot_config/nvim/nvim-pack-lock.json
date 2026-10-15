@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "vimdoc-ja": {
+      "rev": "0f90a47b2849afb20180254025720610357d94b0",
+      "src": "https://github.com/vim-jp/vimdoc-ja"
+    }
+  }
+}
