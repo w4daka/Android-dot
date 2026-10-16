@@ -6,4 +6,6 @@
 [color]
 	ui = true
 [ghq]
-	root = /home/w4daka/projects
+	root = /data/data/com.termux/files/home/storage/downloads
+[safe]
+	directory = /storage/emulated/0/Download/my_memo
