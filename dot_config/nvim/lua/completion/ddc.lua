@@ -1,3 +1,5 @@
+vim.g.copilot_no_maps = true
+
 return {
   'Shougo/ddc.vim',
   dependencies = {
@@ -18,10 +20,10 @@ return {
     'rafamadriz/friendly-snippets',
     'hrsh7th/vim-vsnip',
     'uga-rosa/ddc-source-vsnip',
+    'Shougo/ddc-source-copilot',
   },
   config = function()
     -- 	-- " Customize global settings
-    --
     vim.fn['ddc#custom#patch_global']({
       ui = 'pum',
       autoCompleteEvents = {
@@ -38,10 +40,17 @@ return {
     --
     -- 	-- " Use around source.
     -- " https://github.com/Shougo/ddc-source-around
-    vim.fn['ddc#custom#patch_global'](
-      'sources',
-      { 'skkeleton', 'skkeleton_okuri', 'lsp', 'vsnip', 'file', 'buffer', 'around', 'dictionary' }
-    )
+    vim.fn['ddc#custom#patch_global']('sources', {
+      'skkeleton',
+      'skkeleton_okuri',
+      'lsp',
+      'copilot',
+      'vsnip',
+      'file',
+      'buffer',
+      'around',
+      'dictionary',
+    })
     vim.fn['ddc#custom#patch_global']('sourceOptions', {
       _ = {
         matchers = { 'matcher_head' },
@@ -78,6 +87,11 @@ return {
       dictionary = {
         mark = '[d]',
       },
+      copilot = {
+        mark = '[C]',
+        matchers = {},
+        minAutoCompleteLength = 0,
+      },
     })
     vim.fn['ddc#custom#patch_global']('sourceParams', {
       around = { maxSize = 500 },
@@ -85,6 +99,9 @@ return {
         dictPaths = { '/usr/share/dict/words' },
         smartCase = true,
         isVolatile = true,
+      },
+      copilot = {
+        copilot = 'lua',
       },
     })
 
