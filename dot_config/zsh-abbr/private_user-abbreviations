@@ -1,4 +1,5 @@
 abbr "ccd"="chezmoi cd"
+abbr "cmm"="cd /data/data/com.termux/files/home/storage/downloads/my_memo"
 abbr "cradd"="chezmoi re-add"
 abbr "g"="git"
 abbr "ga"="git add"
