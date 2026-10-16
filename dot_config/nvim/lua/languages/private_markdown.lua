@@ -7,6 +7,7 @@ return {
     ---@type render.md.UserConfig
     opts = {},
   },
+  -- ref https://github.com/selimacerbas/markdown-preview.nvim
   {
     'selimacerbas/mdkite.nvim',
     -- a kitehost.nvim checkout under another dir name needs its spec to
@@ -37,7 +38,7 @@ return {
       vim.keymap.set(
         'n',
         '<leader>mpr',
-        '<cmd>MdKite  refresh<cr>',
+        '<cmd>MdKite refresh<cr>',
         { desc = 'Markdown: Refresh preview' }
       )
     end,

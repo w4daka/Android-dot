@@ -16,9 +16,6 @@ return { -- Collection of various small independent plugins/modules
         end
         return vim
           .iter(vim.fs.dir(MiniSessions.config.directory))
-          :filter(function(_, type)
-            return type ~= 'directory'
-          end)
           :map(function(v)
             local name = vim.fs.basename(v)
             return vim.startswith(name, lead) and name or nil
@@ -119,12 +116,6 @@ return { -- Collection of various small independent plugins/modules
       })
 
       require('mini.git').setup()
-      vim.keymap.set(
-        'n',
-        '<leader>gc',
-        '<cmd>Git commit -v<cr>',
-        { desc = 'Git commmit -v by minigit' }
-      )
       require('mini.tabline').setup({
         tabline_use_icons = vim.g.have_nerd_font, -- Nerd Font があればアイコン表示
         -- format = nil, -- デフォルトでファイル名 + アイコン + 変更マーク
