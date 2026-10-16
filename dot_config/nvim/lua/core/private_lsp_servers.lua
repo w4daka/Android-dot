@@ -1,4 +1,4 @@
-local capabilities = require('ddc_source_lsp').make_client_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 vim.lsp.config('html', {
@@ -9,8 +9,6 @@ vim.lsp.config('cssls', {
 })
 
 vim.lsp.config('eslint', {
-
-  capabilities = capabilities,
   on_attach = function(_, bufnr)
     vim.api.nvim_create_autocmd('BufWritePre', {
       buffer = bufnr,
@@ -19,7 +17,6 @@ vim.lsp.config('eslint', {
   end,
 })
 vim.lsp.config('gopls', {
-  capabilities = capabilities,
   settings = {
     gopls = {
       semanticTokens = false,
@@ -27,7 +24,6 @@ vim.lsp.config('gopls', {
   },
 })
 vim.lsp.config('denols', {
-  capabilities = capabilities,
   cmd = { 'deno', 'lsp' },
   filetypes = {
     'javascript',
@@ -55,8 +51,7 @@ vim.lsp.config('denols', {
 })
 
 vim.lsp.config('ts_ls', {
-  capabilities = capabilities,
-  cmd = { 'typescript-language-server', '--stdio' },
+  cmd = { 'typescript-language-server' },
   filetypes = {
     'javascript',
     'javascriptreact',
@@ -66,15 +61,11 @@ vim.lsp.config('ts_ls', {
     'typescript.tsx',
   },
   root_markers = {
-    '.git',
     'package-lock.json',
     'yarn.lock',
     'pnpm-lock.yaml',
     'bun.lockb',
     'bun.lock',
-    'package.json',
-    'tsconfig.json',
-    'jsconfig.json',
   },
   settings = {
     enable = true,
@@ -83,7 +74,6 @@ vim.lsp.config('ts_ls', {
 -- ref https://github.com/nix-community/nixd/issues/744?utm_source=chatgpt.com
 local flake_root = vim.fs.root(0, { 'flake.nix' })
 vim.lsp.config('nixd', {
-  capabilities = capabilities,
   settings = {
     nixd = {
       nixpkgs = {

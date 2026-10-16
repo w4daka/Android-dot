@@ -15,7 +15,6 @@ return {
       'rinx/cmp-skkeleton', -- または Xantibody/blink-cmp-skkeleton を使う場合は後述
       'uga-rosa/cmp-dictionary',
     },
-    enabled = false,
     config = function()
       local cmp = require('cmp')
       local luasnip = require('luasnip')
@@ -27,7 +26,7 @@ return {
       -- LuaSnip の基本設定（choice node などで使う）
       luasnip.config.setup({})
       require('cmp_dictionary').setup({
-        paths = { '/usr/share/dict/words' }, -- または複数指定可
+        paths = { '~/.config/nvim/word.txt' }, -- または複数指定可
         exact_length = 2, -- 2文字以上で補完開始
       })
 
